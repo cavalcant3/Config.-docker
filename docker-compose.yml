@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  db:
+    image: postgres
+#    nome do container
+    container_name: testee
+    environment:
+
+      POSTGRES_USER: #usuario
+      POSTGRES_PASSWORD: #senha
+#      nome do banco
+      POSTGRES_DB: testee
+    ports:
+      - "5432:5432"
+    volumes:
+      #nome do container aqui
+      - testee:/var/lib/postgresql
+volumes:
+  #nome do container aqui
+  testee:
